@@ -9,8 +9,15 @@ async function bootstrap() {
   if (!cachedApp) {
     const app = await NestFactory.create(AppModule);
     
+    // Allow multiple frontend URLs
     app.enableCors({
-      origin: process.env.FRONTEND_URL || '*',
+      origin: [
+        'https://personal-website-finals-e8j8.vercel.app',
+        'https://personal-website-finals-e8j8-6ylizob2x-patrickcabigans-projects.vercel.app',
+        process.env.FRONTEND_URL,
+        process.env.FRONTEND_URL_1,
+        process.env.FRONTEND_URL_2
+      ].filter(Boolean),
       credentials: true,
     });
     
@@ -40,7 +47,6 @@ export default async function handler(req, res) {
   }
 }
 
-// Only listen when running locally
 if (!process.env.VERCEL) {
   async function localBootstrap() {
     const app = await NestFactory.create(AppModule);
