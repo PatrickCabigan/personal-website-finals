@@ -1,8 +1,3 @@
-make it a copyable and i will paste it on readme
-Genshin Impact Personal Website — Project Documentation
-Course: IT242 — WEBPROG
-Repository: personal-website-finals
-Folder: personal-website-finals/
 
 Overview
 This project is a personal profile and portfolio web application with a Genshin Impact theme, developed as a full-stack implementation for IT242. It presents my background, skills, friends, and travel logs in an interactive, adventure-themed interface. The application is built using a modern full-stack architecture with a React frontend, a NestJS backend hosted on Vercel, a Supabase database for dynamic data, and deployed entirely on Vercel.
